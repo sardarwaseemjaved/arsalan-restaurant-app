@@ -1,434 +1,139 @@
-<!-- index.html start -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Explore the full menu of ROYAL MASALA. Authentic Indian appetizers, main courses, and tandoori specialties." />
 
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+    <!--=============== OPEN GRAPH ===============-->
+    <meta property="og:title" content="Menu - ROYAL MASALA" />
+    <meta property="og:description" content="Discover our delicious range of Indian dishes at ROYAL MASALA." />
+    <meta property="og:image" content="assets/img/hero.png" />
 
-  <!-- <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&display=swap" rel="stylesheet"> -->
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
 
-  <link rel="stylesheet" type="text/css" href="./assets/css/menu.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-  <style>
-    #page-container {
-      padding-top: 150px !important;
-      padding-bottom: 300px !important;
-    }
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
-    #full_menu {
-      margin: 0;
-      padding: 14% !important;
-      padding-top: 50px !important;
-      font-family: Arial, sans-serif !important;
-      -webkit-font-smoothing: antialiased !important;
-      -webkit-text-size-adjust: 100% !important;
-    }
-
-    #sticky-footer {
-      font-weight: 500;
-      -webkit-font-smoothing: antialiased;
-      /* color: #cc6600; */
-      line-height: 1em;
-      font-family: 'El Messiri', Helvetica, Arial, Lucida, sans-serif;
-      box-sizing: border-box;
-      outline: 0;
-      font-size: 100%;
-      -webkit-text-size-adjust: 100%;
-      vertical-align: baseline;
-      background: transparent;
-      background-size: cover;
-      background-position: 50%;
-      background-repeat: no-repeat;
-      border: 0 solid #333;
-      animation-timing-function: linear;
-      animation-duration: .2s;
-      /* background-color: var(--primary-color-faded); */
-      /* background: rgba(0,0,0,0.5); */
-      border-radius: 5px 5px 5px 5px;
-      overflow: hidden;
-      padding-top: 8px !important;
-      padding-right: 5px !important;
-      padding-bottom: 8px !important;
-      padding-left: 5px !important;
-      margin-top: 0px !important;
-      margin-right: 0px !important;
-      margin-bottom: 0px !important;
-      margin-left: 0px !important;
-      position: fixed !important;
-      bottom: 10px;
-      top: auto;
-      left: 14% !important;
-      right: auto !important;
-      max-width: 70%;
-      align-self: center !important;
-    }
-
-    .cat_heading {
-      text-align: center;
-      border: 1px solid var(--primary-color);
-      border-radius: 5px;
-      margin-top: 25px;
-      margin-bottom: 15px;
-    }
-
-    #category-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    ul#category-links {
-      display: flex;
-      flex-flow: wrap;
-      justify-content: center;
-    }
-
-    #category-links li {
-      display: inline-block;
-      margin-bottom: 5px;
-      margin-left: 2px;
-      /* margin-right: 20px; */
-    }
-
-    #category-links a {
-      direction: ltr;
-      visibility: visible;
-      box-sizing: border-box;
-      margin: 0;
-      outline: 0;
-      -webkit-text-size-adjust: 100%;
-      vertical-align: baseline;
-      background: transparent;
-      font-size: 15px;
-      line-height: 1;
-      border: 0 solid #666;
-      pointer-events: auto;
-      cursor: pointer;
-      display: flex !important;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      border-radius: 15px 15px 15px 15px;
-      overflow: hidden;
-      border-width: 1px;
-      border-color: var(--primary-color);
-      transition: background-color 300ms ease 0ms;
-      /* background-color: var(--primary-color); */
-      background-color: linear-gradient(135deg, #343a40 0%, #667584 50%, #4e5256 51%, #242a30 71%, #343a40 100%);
-      padding-top: 8px;
-      padding-right: 10px;
-      padding-bottom: 8px;
-      padding-left: 10px;
-      font-family: 'ABeeZee', Helvetica, Arial, Lucida, sans-serif;
-      font-weight: 400;
-      color: var(--white) !important;
-      font-style: unset;
-      background: linear-gradient(to bottom, #333, #000);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.14);
-      /* transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out; */
-
-    }
-
-    #category-links a:hover {
-      background-color: var(--primary-color-faded);
-    }
-
-    .note {
-      font-weight: 500;
-      -webkit-font-smoothing: antialiased;
-      font-family: 'El Messiri', Helvetica, Arial, Lucida, sans-serif;
-      word-wrap: break-word;
-      line-height: 1.3em;
-      text-align: left;
-      box-sizing: border-box;
-      font-size: 100%;
-      vertical-align: baseline;
-      background: transparent;
-      color: #ffffff;
-
-      position: relative;
-      background-size: cover;
-      background-position: 50%;
-      background-repeat: no-repeat;
-      animation-timing-function: linear;
-      animation-duration: .2s;
-      word-wrap: break-word;
-      line-height: 1.3em;
-      background-color: var(--primary-color);
-      border-radius: 10px 10px 10px 10px;
-      overflow: hidden;
-      min-height: 32px;
-      padding-top: 18px !important;
-      padding-bottom: 18px !important;
-      padding-left: 23px !important;
-      padding-right: 23px !important;
-      margin-left: 5px;
-      margin-right: 5px;
-      margin-bottom: 35px !important;
-      text-align: left;
-    }
-
-    .menu-section {
-      display: grid;
-      grid-template-columns: auto auto;
-      column-gap: 10px;
-      row-gap: 10px;
-    }
-
-    @supports (scroll-margin-top: 0) {
-      .menu-section {
-        scroll-margin-top: 220px;
-      }
-    }
-
-    .menu-item {
-      /* grid-column: 1 / 2; */
-      /* display: block; */
-      /* margin: 5px; */
-      /* border-bottom: 1px solid var(--primary-color); */
-    }
-
-    @media only screen and (max-width: 600px) {
-      #page-container {
-        padding-top: 100px !important;
-        padding-bottom: 100px !important;
-      }
-
-      #full_menu {
-        margin: 0;
-        padding-left: 7% !important;
-        padding-right: 7% !important;
-        padding-bottom: 7% !important;
-        padding-top: 20px !important;
-      }
-
-      #sticky-footer {
-        left: 3% !important;
-        right: 3% !important;
-        max-width: 100% !important;
-      }
-
-      #category-links a {
-        font-size: 10px;
-      }
-
-      .menu-section {
-        grid-template-columns: auto;
-      }
-    }
-  </style>
+    <title>Menu - ROYAL MASALA</title>
 </head>
 
-<body id="top">
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <i class="ri-restaurant-2-line"></i>
+                ROYAL MASALA
+            </a>
 
-  <!-- 
-    - #PRELOADER
-  -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="index.html#home" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#about" class="nav__link">About Us</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="menu.html" class="nav__link active-link">Menu</a>
+                    </li>
+                </ul>
 
-  <div class="preload" data-preaload>
-    <div class="circle"></div>
-    <p class="text">Taj Mahal</p>
-  </div>
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
 
+            <div class="nav__buttons">
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-apps-2-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <section class="section">
+            <div class="container">
+                <span class="section__subtitle">Our Royal</span>
+                <h2 class="section__title">Delicious Menu</h2>
 
-  <!-- 
-    - #TOP BAR
-  -->
+                <nav class="category-nav" id="category-nav">
+                    <!-- Categories will be loaded here -->
+                </nav>
 
-  <div class="topbar">
-    <div class="container">
+                <div id="menu-container">
+                    <!-- Menu items will be loaded here -->
+                    <div class="loader">Loading royal flavors...</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-      <address class="topbar-item">
-        <div class="icon">
-          <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__container container grid">
+            <div>
+                <a href="#" class="footer__logo">ROYAL MASALA</a>
+                <p class="footer__description">
+                    Good food, good mood, great memories <br>
+                    thank you for dining with us!
+                </p>
+            </div>
+
+            <div class="footer__content">
+                <div>
+                    <h3 class="footer__title">Information</h3>
+                    <ul class="footer__links">
+                        <li class="footer__information">(360) 621-0688</li>
+                        <li class="footer__information">Call us for deliveries & reservations</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">Address</h3>
+                    <ul class="footer__links">
+                        <li class="footer__information">
+                            2330 Washington St, <br>
+                            Port Townsend, WA 98368
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <span class="span">
-          19559 Viking Ave NW Unit E, Poulsbo, WA 98370, USA
-        </span>
-      </address>
-
-      <div class="separator"></div>
-
-      <div class="topbar-item item-2">
-        <div class="icon">
-          <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+        <div class="footer__info container">
+            <span class="footer__copy">
+                &#169; Copyright 2025 ROYAL MASALA. All rights reserved
+            </span>
         </div>
+    </footer>
 
-        <span class="span">Mon - Sat: 12:00 PM to 9:00 PM</span>
-      </div>
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
 
-      <a href="tel:360-930-8165" class="topbar-item link">
-        <div class="icon">
-          <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
-        </div>
+    <!--=============== POCKETBASE ===============-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pocketbase/0.8.0/pocketbase.umd.js"></script>
 
-        <span class="span">360-930-8165</span>
-      </a>
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="assets/js/scrollreveal.min.js"></script>
 
-      <div class="separator"></div>
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
 
-      <a href="mailto:tajmahalcurryandtandoori@gmail.com" class="topbar-item link">
-        <div class="icon">
-          <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
-        </div>
-
-        <span class="span">tajmahalcurryandtandoori@gmail.com</span>
-      </a>
-
-    </div>
-  </div>
-
-
-
-
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <a href="./index.html" class="logo">
-        <!-- <img src="./assets/images/logo.svg" width="160" height="50" alt="Grilli - Home"> -->
-        <img src="./assets/images/LOGO_NO_BG.png" width="75" height="50" alt="Taj Mahal - Home">
-      </a>
-
-      <nav class="navbar" data-navbar>
-
-        <button class="close-btn" aria-label="close menu" data-nav-toggler>
-          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-        </button>
-
-        <a href="./index.html#" class="logo">
-          <!-- <img src="./assets/images/logo.svg" width="160" height="50" alt="Grilli - Home"> -->
-          <img src="./assets/images/LOGO_NO_BG.png" width="75" height="50" alt="Taj Mahal - Home">
-        </a>
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <a href="./index.html#" class="navbar-link hover-underline">
-              <div class="separator"></div>
-
-              <span class="span">Home</span>
-            </a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#" class="navbar-link hover-underline active">
-              <div class="separator"></div>
-
-              <span class="span">Menus</span>
-            </a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="./index.html#about" class="navbar-link hover-underline">
-              <div class="separator"></div>
-
-              <span class="span">About Us</span>
-            </a>
-          </li>
-
-          <!-- <li class="navbar-item">
-            <a href="#" class="navbar-link hover-underline">
-              <div class="separator"></div>
-
-              <span class="span">Our Chefs</span>
-            </a>
-          </li> -->
-
-          <li class="navbar-item">
-            <a href="./index.html#contact" class="navbar-link hover-underline">
-              <div class="separator"></div>
-
-              <span class="span">Contact</span>
-            </a>
-          </li>
-
-        </ul>
-
-        <div class="text-center">
-          <p class="headline-1 navbar-title">Visit Us</p>
-
-          <address class="body-4">
-            19559 Viking Ave NW Unit E, Poulsbo, WA 98370, USA
-          </address>
-
-          <p class="body-4 navbar-text">Mon - Sat: 12:00 PM to 9:00 PM</p>
-
-          <a href="mailto:tajmahalcurryandtandoori@gmail.com"
-            class="body-4 sidebar-link">tajmahalcurryandtandoori@gmail.com</a>
-
-          <div class="separator"></div>
-
-          <p class="contact-label">Booking Request</p>
-
-          <a href="tel:360-930-8165" class="body-1 contact-number hover-underline">
-            360-930-8165
-          </a>
-        </div>
-
-      </nav>
-
-      <!-- <a href="#" class="btn btn-secondary">
-        <span class="text text-1">Find A Table</span>
-
-        <span class="text text-2" aria-hidden="true">Find A Table</span>
-      </a> -->
-
-      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-        <span class="line line-1"></span>
-        <span class="line line-2"></span>
-        <span class="line line-3"></span>
-      </button>
-
-      <div class="overlay" data-nav-toggler data-overlay></div>
-
-    </div>
-  </header>
-
-
-
-
-
-
-  <!-- 
-    - #menu
-  -->
-  <div id="page-container">
-    <div id="full_menu">
-    </div>
-  </div>
-  <!-- 
-    - #menu categories footer
-  -->
-  <footer id="sticky-footer">
-    <ul id="category-links">
-    </ul>
-  </footer>
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-  <script src="./assets/js/menu.js"></script>
-
+    <!--=============== MENU JS ===============-->
+    <script src="assets/js/menu.js"></script>
 </body>
 
 </html>
-<!-- index.html end -->
