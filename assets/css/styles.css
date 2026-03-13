@@ -1297,6 +1297,10 @@ body.dark-theme {
   row-gap: 4rem;
 }
 
+.category-section {
+  scroll-margin-top: 8rem; /* Account for fixed header + sticky nav */
+}
+
 .category-title {
   font-size: var(--h2-font-size);
   font-family: var(--title-font);
