@@ -916,8 +916,7 @@ body.dark-theme {
 
 @media screen and (min-width: 1024px) {
   .call-now {
-    left: initial;
-    right: 3rem;
+    left: 3rem;
     bottom: 3rem;
   }
   
@@ -1183,11 +1182,7 @@ body.dark-theme {
     justify-content: center;
   }
 
-  .call-now {
-    left: initial;
-    right: 3rem;
-    bottom: 3rem;
-  }
+
 
   .footer {
     padding-block: 8rem 3rem;
