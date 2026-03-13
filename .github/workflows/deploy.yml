@@ -1,0 +1,25 @@
+name: Deploy Menu App
+
+on:
+  push:
+    branches:
+      - main  # Trigger only when pushing to main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd ~/restaurant-app/pb_public
+            git pull origin main
+            # If you need to restart pocketbase (optional)
+            # sudo systemctl restart pocketbase
