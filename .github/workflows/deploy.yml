@@ -20,6 +20,6 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             cd ~/restaurant-app/pb_public
-            git pull origin main
+            git pull origin master
             # If you need to restart pocketbase (optional)
             # sudo systemctl restart pocketbase
